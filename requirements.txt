@@ -14,3 +14,4 @@ gunicorn>=19.1.0
 tensorflow
 keras
 h5py
+Pillow >= 2.1.0
