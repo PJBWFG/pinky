@@ -70,7 +70,7 @@ def predict_details(img):
 		
 
 		pink_eye = prediction(image, itching, discharge, pain_blur_eye)
-#		print("\n\n\n\n", type(pink_eye))
+		print("\n\n\n\n", type(pink_eye))
 #		print(request.form['itching'])
 
 		return render_template('output.html', img_src='temp/'+image, result=pink_eye)
