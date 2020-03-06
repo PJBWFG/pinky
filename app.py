@@ -12,6 +12,7 @@ IMAGE_FILE = ''
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+app.config['DEBUG'] = True
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -76,5 +77,4 @@ def predict_details(img):
 
 
 if __name__ == "__main__":
-	app.debug = True
 	app.run()
