@@ -8,7 +8,7 @@ from keras.models import load_model
 eye_cascade = cv2.CascadeClassifier('haarcascades/haarcascade_eye.xml')
 
 #Keras model loader
-model_load = load_model('model/pinky_only_CNN_02_14_2020.h5')
+model_load = load_model('./model/pinky_only_CNN_02_14_2020.h5')
 
 # image pre-processing
 def img_input(img):
@@ -54,7 +54,7 @@ def classfication_result(img):
 # Pink Eye Detection
 def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
     validation_image = "Valid image"
-    return validation_image
+    
     #print(validation_image)
     if validation_image == "Valid image":
         #return "Valid image"
