@@ -52,6 +52,7 @@ def detect_eyes(img):
 def classfication_result(img):
     print("Classificatio nlgo")
     result = model_load.predict_classes(img)
+    print("Donw Classificaiton")
     return result
 
 
@@ -62,10 +63,11 @@ def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
     if validation_image == "Valid image":
         #return "Valid image"
         input_image_preprocessed = img_input(input_raw_img)
-        return ["This is a log"]
+        
         eye_prediction = classfication_result(input_image_preprocessed)
         #print(eye_prediction[0][0])
-        #return eye_prediction
+        print(eye_prediction)
+        return ["This is a log"]
         if eye_prediction[0][0] == 1 and (itching == 0 and discharge == 0 and pain_blur_eye == 0):
             return ["Not a pink eye"]
 
