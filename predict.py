@@ -56,6 +56,7 @@ def classfication_result(img):
 def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
     validation_image = "Valid image"
     input_image_preprocessed = img_input(input_raw_img)
+    return "NONON"
     return classfication_result(input_image_preprocessed)
     #print(validation_image)
     if validation_image == "Valid image":
