@@ -54,7 +54,7 @@ def classfication_result(img):
 # Pink Eye Detection
 def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
     validation_image = "Valid image"
-    return ["True"]
+    return validation_image
     #print(validation_image)
     if validation_image == "Valid image":
         #return "Valid image"
