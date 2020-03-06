@@ -11,6 +11,6 @@ numpy==1.15.4
 
 gunicorn>=19.1.0
 
-tensorflow
+tensorflow==1.15
 keras
 h5py
