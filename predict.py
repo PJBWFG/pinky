@@ -47,6 +47,7 @@ def detect_eyes(img):
 
 # Model - Prediction
 def classfication_result(img):
+    return model_load
     result = model_load.predict_classes(img)
     return result
 
@@ -54,7 +55,7 @@ def classfication_result(img):
 # Pink Eye Detection
 def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
     validation_image = "Valid image"
-    
+    return classfication_result(input_image_preprocessed)
     #print(validation_image)
     if validation_image == "Valid image":
         #return "Valid image"
