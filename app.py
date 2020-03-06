@@ -63,7 +63,7 @@ def predict_details(img):
 	if request.method == 'POST':
 		for files in os.listdir('static/temp/'):
 			image = files
-
+		return ('Yeah')
 		itching = int(request.form['itching'])
 		discharge = int(request.form['discharge'])
 		pain_blur_eye = int(request.form['pain_blur'])
