@@ -65,6 +65,7 @@ def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
         input_image_preprocessed = img_input(input_raw_img)
         
         eye_prediction = classfication_result(input_image_preprocessed)
+        return ["This is a log"]
         #print(eye_prediction[0][0])
         print(eye_prediction)
         return ["This is a log"]
