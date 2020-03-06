@@ -87,7 +87,6 @@ def prediction(file, itch, disch, pain_blur):
     #input raw image file
     #print("\n\n\n",file)
     
-    return file
     input_raw_img = './static/temp/'+file
 
     display_img = cv2.imread(input_raw_img)
@@ -97,5 +96,7 @@ def prediction(file, itch, disch, pain_blur):
     itching = itch
     discharge = disch
     pain_blur_eye = pain_blur
+    
+    return input_raw_img
 
     return pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye)
