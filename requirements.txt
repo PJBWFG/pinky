@@ -1,0 +1,15 @@
+# This file is used by pip to install required python packages
+# Usage: pip install -r requirements.txt
+
+# Flask Framework
+Flask==1.1.1
+
+# OpenCV
+opencv-python==4.1.0.25
+
+numpy==1.15.4
+
+gunicorn>=19.1.0
+
+tensorflow
+keras

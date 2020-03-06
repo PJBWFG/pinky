@@ -1,0 +1,18 @@
+body{
+  background-color:    #      #FFCFFD
+}
+
+.container{
+  width: 40%;
+  margin: 0 0 0 0;
+  margin-top: 100px;
+  float: left;
+}
+
+.sample{
+  margin-left: 10%;
+}
+
+.header{
+  text-align: center;
+}
