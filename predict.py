@@ -87,7 +87,7 @@ def prediction(file, itch, disch, pain_blur):
     #input raw image file
     #print("\n\n\n",file)
     
-    return [file]
+    return file
     input_raw_img = './static/temp/'+file
 
     display_img = cv2.imread(input_raw_img)
