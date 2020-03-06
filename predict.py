@@ -12,12 +12,15 @@ model_load = load_model('./model/pinky_only_CNN_02_14_2020.h5')
 
 # image pre-processing
 def img_input(img):
+    print("image preprocessing")
 
     #Preprocess the image and resize it to 150*150 and normalize it
     img_process = image.load_img(img, target_size=(150, 150))
     img_process = image.img_to_array(img_process)
     img_process = np.expand_dims(img_process, axis=0)
     img_process = img_process/255
+    
+    print("image preprocessing ends")
 
     #return the image
     return img_process
@@ -47,6 +50,7 @@ def detect_eyes(img):
 
 # Model - Prediction
 def classfication_result(img):
+    print("Classificatio nlgo")
     result = model_load.predict_classes(img)
     return result
 
@@ -58,6 +62,7 @@ def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
     if validation_image == "Valid image":
         #return "Valid image"
         input_image_preprocessed = img_input(input_raw_img)
+        return ["This is a log"]
         eye_prediction = classfication_result(input_image_preprocessed)
         #print(eye_prediction[0][0])
         #return eye_prediction
