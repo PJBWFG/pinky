@@ -14,8 +14,8 @@ model_load = load_model('./model/pinky_only_CNN_02_14_2020.h5')
 def img_input(img):
 
     #Preprocess the image and resize it to 150*150 and normalize it
-    img_process = image.load_img(img, target_size=(150, 150))
-    img_process = image.img_to_array(img_process)
+    img_process = cv2.imread(img)
+    img_process = cv2.resize(img_process, (150,150))
     img_process = np.expand_dims(img_process, axis=0)
     img_process = img_process/255
 
@@ -47,14 +47,14 @@ def detect_eyes(img):
 
 # Model - Prediction
 def classfication_result(img):
+    print(load_model)
     result = model_load.predict_classes(img)
     return result
 
 
 # Pink Eye Detection
 def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
-    validation_image = "Valid image"
-    return "NONON"
+    validation_image = detect_eyes(input_raw_img)
     #print(validation_image)
     if validation_image == "Valid image":
         #return "Valid image"
@@ -87,7 +87,6 @@ def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
 def prediction(file, itch, disch, pain_blur):
     #input raw image file
     #print("\n\n\n",file)
-    
     input_raw_img = './static/temp/'+file
 
     display_img = cv2.imread(input_raw_img)
