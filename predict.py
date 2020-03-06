@@ -7,9 +7,6 @@ from keras.models import load_model
 #Eye Detection Haar-cascade
 eye_cascade = cv2.CascadeClassifier('haarcascades/haarcascade_eye.xml')
 
-#Keras model loader
-model_load = load_model('./model/pinky_only_CNN_02_14_2020.h5')
-
 # image pre-processing
 def img_input(img):
 
@@ -47,9 +44,13 @@ def detect_eyes(img):
 
 # Model - Prediction
 def classfication_result(img):
-    return model_load
-    result = model_load.predict_classes(img)
-    return result
+    #Keras model loader
+    try:
+        model_load = load_model('./model/pinky_only_CNN_02_14_2020.h5')
+        result = model_load.predict_classes(img)
+        return result
+    except:
+        return "Error"
 
 
 # Pink Eye Detection
