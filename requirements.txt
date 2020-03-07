@@ -14,3 +14,5 @@ gunicorn>=19.1.0
 tensorflow==2.1.0
 keras
 Pillow
+tensorboard==2.1.0
+tensorflow-estimator==2.1.0
