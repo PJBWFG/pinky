@@ -77,4 +77,4 @@ def predict_details(img):
 
 
 if __name__ == "__main__":
-	app.run(threaded=False)
+	app.run()
