@@ -2,16 +2,16 @@
 # Usage: pip install -r requirements.txt
 
 # Flask Framework
-Flask==1.1.1
+Flask
 
 # OpenCV
 opencv-python==4.1.0.25
 
-numpy==1.15.4
+numpy
 
-gunicorn>=19.1.0
+gunicorn
 
 tensorflow
 keras
 h5py
-Pillow >= 2.1.0
+Pillow
