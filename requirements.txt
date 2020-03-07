@@ -11,7 +11,7 @@ numpy
 
 gunicorn
 
-tensorflow
+tensorflow==2.1.0
 keras
 h5py
 Pillow
