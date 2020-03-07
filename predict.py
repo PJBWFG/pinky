@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+import matplotlib.pyplot as plt
 from keras.preprocessing import image
 from keras.models import load_model
 
@@ -8,19 +9,16 @@ from keras.models import load_model
 eye_cascade = cv2.CascadeClassifier('haarcascades/haarcascade_eye.xml')
 
 #Keras model loader
-model_load = load_model('./model/pinky_only_CNN_02_14_2020.h5')
+model_load = load_model('model/pinky_only_CNN_02_14_2020.h5')
 
 # image pre-processing
 def img_input(img):
-    print("image preprocessing")
 
     #Preprocess the image and resize it to 150*150 and normalize it
     img_process = image.load_img(img, target_size=(150, 150))
     img_process = image.img_to_array(img_process)
     img_process = np.expand_dims(img_process, axis=0)
     img_process = img_process/255
-    
-    print("image preprocessing ends")
 
     #return the image
     return img_process
@@ -50,11 +48,7 @@ def detect_eyes(img):
 
 # Model - Prediction
 def classfication_result(img):
-    print("Classificatio nlgo")
-    result = model_load.predict(img)
-    print(result)
-    print("Donw Classificaiton")
-    #return(type(model_load)) 
+    result = model_load.predict_classes(img)
     return result
 
 
@@ -65,12 +59,9 @@ def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
     if validation_image == "Valid image":
         #return "Valid image"
         input_image_preprocessed = img_input(input_raw_img)
-        
         eye_prediction = classfication_result(input_image_preprocessed)
-        #return ["This is a log"]
         #print(eye_prediction[0][0])
-        print(eye_prediction)
-        return ["This is a log"]
+        #return eye_prediction
         if eye_prediction[0][0] == 1 and (itching == 0 and discharge == 0 and pain_blur_eye == 0):
             return ["Not a pink eye"]
 
@@ -106,4 +97,7 @@ def prediction(file, itch, disch, pain_blur):
     discharge = disch
     pain_blur_eye = pain_blur
 
-    return pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye)
+    n = pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye)
+    print(n)
+
+    return n

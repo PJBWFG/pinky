@@ -3,6 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 import time
 from predict import prediction, detect_eyes
+import sys
 
 UPLOAD_FOLDER = './static/temp'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -48,33 +49,19 @@ def predict():
 
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
 
-			return redirect(url_for('predict_details', img=new_filename))
+			pink_eye = prediction(new_filename, 1, 0, 0)
 
+			print("yes")
 
-@app.route('/details/<img>', methods=['POST','GET'])
-def predict_details(img):
+			print("again")
 
-	if request.method == 'GET':
-		valid = detect_eyes('./static/temp/'+img)
-			#print("\n\n\n", valid)
-		return render_template("intermediate.html", img_src='temp/'+img, validity=valid)
+			print(pink_eye)
 
+			return ("yesyyys")
 
-	if request.method == 'POST':
-		for files in os.listdir('static/temp/'):
-			image = files
-			
-		itching = int(request.form['itching'])
-		discharge = int(request.form['discharge'])
-		pain_blur_eye = int(request.form['pain_blur'])
-		
+			#return redirect(url_for('predict_details', img=new_filename))
 
-		pink_eye = prediction(image, itching, discharge, pain_blur_eye)
-		print("\n\n\n\n", type(pink_eye))
-#		print(request.form['itching'])
-
-		return render_template('output.html', img_src='temp/'+image, result=pink_eye)
 
 
 if __name__ == "__main__":
-	app.run()
+	app.run(threaded=False)
