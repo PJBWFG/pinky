@@ -51,10 +51,11 @@ def detect_eyes(img):
 # Model - Prediction
 def classfication_result(img):
     print("Classificatio nlgo")
-    #result = model_load.predict_classes(img)
+    result = model_load.predict(img)
+    print(result)
     print("Donw Classificaiton")
-    return(type(model_load)) 
-    #return result
+    #return(type(model_load)) 
+    return result
 
 
 # Pink Eye Detection
