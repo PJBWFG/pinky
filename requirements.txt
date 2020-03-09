@@ -7,12 +7,9 @@ Flask==1.1.1
 # OpenCV
 opencv-python==4.1.0.25
 
-numpy
+numpy==1.15.4
 
 gunicorn>=19.1.0
 
-tensorflow==2.1.0
+tensorflow
 keras
-Pillow
-tensorboard==2.1.0
-tensorflow-estimator==2.1.0

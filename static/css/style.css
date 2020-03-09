@@ -1,18 +1,17 @@
 body{
-  background-color:    #      #FFCFFD
+  background-color: #D4D4D4;
+  text-align: center;
 }
 
 .container{
-  width: 40%;
-  margin: 0 0 0 0;
-  margin-top: 100px;
-  float: left;
-}
-
-.sample{
-  margin-left: 10%;
+	margin: 0 0 0 0;
+	display: inline-block;
 }
 
 .header{
   text-align: center;
+}
+
+#input-file{
+	margin-left: 40%;
 }

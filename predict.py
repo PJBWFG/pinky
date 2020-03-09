@@ -7,8 +7,6 @@ from keras.models import load_model
 #Eye Detection Haar-cascade
 eye_cascade = cv2.CascadeClassifier('haarcascades/haarcascade_eye.xml')
 
-
-
 # image pre-processing
 def img_input(img):
 
@@ -97,7 +95,4 @@ def prediction(file, itch, disch, pain_blur):
     discharge = disch
     pain_blur_eye = pain_blur
 
-    n = pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye)
-    print(n)
-
-    return n
+    return pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye)

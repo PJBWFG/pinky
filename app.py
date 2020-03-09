@@ -25,7 +25,6 @@ def predict():
 
 	if request.method == 'POST':
 
-
 		if 'imageUpload' not in request.files:
 			#flash('No file part')
 			return redirect(request.url)
@@ -49,17 +48,15 @@ def predict():
 
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
 
-			pink_eye = prediction(new_filename, 1, 0, 0)
+			itching = int(request.form['itching'])
+			discharge = int(request.form['discharge'])
+			pain_blur = int(request.form['pain_blur'])
 
-			print("yes")
+			print(itching, discharge,)
 
-			print("again")
+			pink_eye = prediction(new_filename, itching, discharge, pain_blur)
 
-			print(pink_eye)
-
-			return ("yesyyys")
-
-			#return redirect(url_for('predict_details', img=new_filename))
+			return render_template('output.html', img_src='temp/'+new_filename, result=pink_eye)
 
 
 

@@ -4,7 +4,7 @@
 <head>
 	<title>Detect Pink Eye</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
 </head>
 
 <body>
@@ -13,24 +13,36 @@
 		<h1>Pink-Eye Detection</h1>
 	</div>
 
-	<div class="container sample">
+	<div class="container">
 		<h4>Upload Image as shown below:</h4>
 		<img src="./static/sample1.jpg" height="150" width="150" alt="">
-		OR
-		<img src="./static/sample2.jpeg" height="150" width="150" alt="">
 	</div>
 
-	<div class="container upload">
-
+	<div class="container">
 		<form action="/" method="post" enctype=multipart/form-data> <div class="container">
+			<br>
 			<label>Select image: </label>
-			<input type="file" name="imageUpload" accept="image/*"></input><br>
-			<input type="submit" name=""></input>
+			<input type="file" name="imageUpload" accept="image/*" id="input-file"></input><br>
+
+			<div class="container">
+
+          <h4>Please provide few details</h4>
+
+          <label>Itching?</label>
+          <input type="radio" name="itching" value="1" required> YES </input>
+          <input type="radio" name="itching" value="0"> NO </input><br>
+
+          <label>Eyes discharge or Sleepy Eyes?</label>
+          <input type="radio" name="discharge" value="1" required> YES </input>
+          <input type="radio" name="discharge" value="0"> NO </input><br>
+
+          <label>Pain or Blurry Eyes?</label>
+          <input type="radio" name="pain_blur" value="1" required> YES </input>
+          <input type="radio" name="pain_blur" value="0"> NO </input><br>
+
+          <button type="submit">submit</button>
 	</div>
 
-
-	</form>
-	</div>
 
 </body>
 
