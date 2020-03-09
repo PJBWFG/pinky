@@ -51,9 +51,7 @@ def predict():
 			itching = int(request.form['itching'])
 			discharge = int(request.form['discharge'])
 			pain_blur = int(request.form['pain_blur'])
-
-			print(itching, discharge,)
-
+			
 			pink_eye = prediction(new_filename, itching, discharge, pain_blur)
 
 			return render_template('output.html', img_src='temp/'+new_filename, result=pink_eye)
