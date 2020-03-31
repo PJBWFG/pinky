@@ -55,7 +55,7 @@ def predict():
 			
 			pink_eye = prediction(new_filename, itching, discharge, pain_blur)
 
-			print(pink_eye)
+			#print(pink_eye)
 
 			return jsonify(pink_eye)
 
