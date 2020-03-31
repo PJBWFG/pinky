@@ -4,7 +4,7 @@ import os
 import time
 from predict import prediction, detect_eyes
 import sys
-from flask import jsonify
+import json
 
 UPLOAD_FOLDER = './static/temp'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -55,9 +55,9 @@ def predict():
 			
 			pink_eye = prediction(new_filename, itching, discharge, pain_blur)
 
-			#print(pink_eye)
+			result = json.dumps({ 'results': pink_eye })
 
-			return jsonify(pink_eye)
+			return (result)
 
 
 
