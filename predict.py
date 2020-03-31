@@ -61,10 +61,10 @@ def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
         #print(eye_prediction[0][0])
         #return eye_prediction
         if eye_prediction[0][0] == 1 and (itching == 0 and discharge == 0 and pain_blur_eye == 0):
-            return ["Not a pink eye"]
+            return ["Not a pink eye", ""]
 
         elif eye_prediction[0][0] == 1 and (itching == 0 and discharge == 0 and pain_blur_eye == 1):
-            return ["Not a pink eye"]
+            return ["Not a pink eye", ""]
 
         elif eye_prediction[0][0] == 1 and (itching == 0 and discharge == 1 and (pain_blur_eye == 1 or pain_blur_eye == 0)):
             return ["Pink eye", "Bacterial or Viral Conjunctivitis"]
@@ -77,9 +77,9 @@ def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
 
 
         else:
-            return ["Not a Pink Eye"]
+            return ["Not a Pink Eye", ""]
     else:
-        return ["Invalid image"]
+        return ["Invalid image", ""]
 
 
 def prediction(file, itch, disch, pain_blur):

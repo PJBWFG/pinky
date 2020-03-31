@@ -55,7 +55,7 @@ def predict():
 			
 			pink_eye = prediction(new_filename, itching, discharge, pain_blur)
 
-			result = json.dumps({ 'results': pink_eye })
+			result = json.dumps({ 'result': pink_eye[0], 'disease': pink_eye[1] })
 
 			return (result)
 
