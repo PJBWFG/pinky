@@ -77,7 +77,7 @@ def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
 
 
         else:
-            return ["Not a Pink Eye", ""]
+            return ["Not a pink eye", ""]
     else:
         return ["Invalid image", ""]
 
