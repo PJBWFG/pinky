@@ -45,8 +45,14 @@ def detect_eyes(img):
 # Model - Prediction
 def classfication_result(img):
     #Keras model loader
+    
+    print("Loading the model")
     model_load = load_model('model/pinky_only_CNN_02_14_2020.h5')
+    
+    print("Loading Model Successfully")
     result = model_load.predict_classes(img)
+    
+    print("Model Predicted Correctly")
     return result
 
 
@@ -60,6 +66,7 @@ def pink_eye_new(input_raw_img,itching,discharge,pain_blur_eye):
         eye_prediction = classfication_result(input_image_preprocessed)
         #print(eye_prediction[0][0])
         #return eye_prediction
+        print("Returing the result")
         if eye_prediction[0][0] == 1 and (itching == 0 and discharge == 0 and pain_blur_eye == 0):
             return ["Not a pink eye", ""]
 
