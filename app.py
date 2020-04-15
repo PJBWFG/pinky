@@ -48,12 +48,18 @@ def predict():
 			new_filename = "temp" + str(time.time()) + '.jpg'
 
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
+			
+			print("Loaded the Image Successfully")
 
 			itching = int(request.form['itching'])
 			discharge = int(request.form['discharge'])
 			pain_blur = int(request.form['pain_blur'])
 			
+			print("Got the Form Successfully")
+			
 			pink_eye = prediction(new_filename, itching, discharge, pain_blur)
+			
+			print("result is successfully predicted: ", pink_eye)
 
 			result = json.dumps({ 'result': pink_eye[0], 'disease': pink_eye[1] })
 
